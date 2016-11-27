@@ -2,6 +2,8 @@ package ru.avb.tinycontrol;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -33,33 +35,49 @@ public class Main {
         frame.setState(JFrame.NORMAL);
         */
 
-
         frame.setLayout(new GridBagLayout());
+        JPanel panel = new JPanel();
+        frame.add(panel);
         Font font = new Font("Verdana", Font.ITALIC, 25);
         JButton b1 = new JButton();
         b1.setText("button1");
         b1.setFont(font);
         JButton b2 = new JButton();
         b2.setText("button2");
-        frame.add(b1);
-        frame.add(b2);
+        panel.add(b1);
+        panel.add(b2);
 
         JProgressBar progress = new JProgressBar();
-        frame.add(progress);
+        panel.add(progress);
         progress.setMinimum(0);
         progress.setMaximum(100);
         progress.setIndeterminate(true);
+
+        Component[] comp = panel.getComponents();
+
+        for (int i=0; i<comp.length; i++) {
+            if (comp[i] instanceof JPanel) System.out.println("Panel");
+            if (comp[i] instanceof JButton) System.out.println("Button");
+        }
 
         Thread.sleep(1000);
         progress.setValue(10);
         Thread.sleep(3000);
         progress.setValue(30);
         progress.setIndeterminate(false);
+        frame.pack();   //убирает лишнее пространство
+
+        //JScrollPane - прокрутка
 
 
-
+        //======LAYOUTS==============
+        /*
+        BorderLayout  это равносильно GravityLayout - лево, право, верх, центр..
+        FlowLayout  заполнение от центра и вниз, если элементы не умешаются
+        */
 
         //======LISTENERS
+
         frame.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
@@ -77,5 +95,13 @@ public class Main {
 
             }
         });
+    }
+
+    public class ButtonActionListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("actionPerformed");
+        }
     }
 }

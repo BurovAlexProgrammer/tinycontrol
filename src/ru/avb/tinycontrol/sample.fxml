@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="ru.avb.tinycontrol.Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <FlowPane alignment="CENTER_RIGHT" columnHalignment="RIGHT" prefHeight="200.0" prefWidth="200.0" prefWrapLength="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+               </children>
+            </FlowPane>
+         </right>
+         <left>
+            <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Label" />
+                  <Label text="Label" />
+                  <Label text="Label" />
+               </children>
+            </FlowPane>
+         </left>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton mnemonicParsing="false" text="RadioButton" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</GridPane>
